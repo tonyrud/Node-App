@@ -13,7 +13,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useMongoClient: true });
 
 mongoose.connection
-    .once('open', () => console.log('Local mongo connection created'))
+    .once('open', () => console.log('mLab connection created'))
     .on('error', error => {
         console.warn('Warning: ', error);
     });
