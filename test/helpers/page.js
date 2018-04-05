@@ -29,10 +29,10 @@ class CustomPage {
 
         await this.setCookie({ name: 'session', value: session });
         await this.setCookie({ name: 'session.sig', value: sig });
-        await this.goto('localhost:3000');
+        await this.goto('localhost:3000/blogs');
 
-        const btnEl = 'a[href="/auth/logout"]';
-        await this.waitFor(btnEl);
+        // wait for button to render
+        await this.waitFor('a[href="/auth/logout"]');
     }
 
     async getContentsOf(selector) {
